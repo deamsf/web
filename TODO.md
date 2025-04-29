@@ -1,3 +1,10 @@
+shape over mijn hoofd
+
+emailformulier werkt niet - environment variables juist?
+
+
+
+
 
 content herstructureren van diensten
 
