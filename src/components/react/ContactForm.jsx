@@ -145,9 +145,9 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={!isFormValid() || isSubmitting}
-              className={`w-full px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+              className={`w-full px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${
                 isFormValid() && !isSubmitting
-                  ? 'bg-highlight hover:bg-highlight/90 text-white'
+                  ? 'bg-highlight hover:bg-highlight/90 text-white cursor-pointer'
                   : 'bg-accent cursor-not-allowed text-gray-600'
               }`}
               title={!isFormValid() ? 'Vul het formulier aub correct in' : ''}

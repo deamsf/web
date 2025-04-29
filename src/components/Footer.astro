@@ -1,29 +1,31 @@
 ---
-import Icons from './Icons.astro';
+import Icons from './react/Icons';
 
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/3volve-be/', icon: 'linkedin' },
-  { name: 'Instagram', url: '#', icon: 'instagram' },
-  { name: 'Facebook', url: '#', icon: 'facebook' },
-  { name: 'Twitter', url: '#', icon: 'twitter' }
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/3volve-be/', icon: 'Linkedin' },
+  { name: 'Instagram', url: '#', icon: 'Instagram' },
+  { name: 'Facebook', url: '#', icon: 'Facebook' },
+  { name: 'Twitter', url: '#', icon: 'Twitter' }
 ];
 ---
-
 <footer class="bg-primary border-t border-secondary/30 py-8">
   <div class="container mx-auto px-4">
     <!-- Social Links -->
     <div class="flex justify-center gap-4 mb-6">
-      {socialLinks.map(({ name, url, icon }) => (
-        <a 
-          href={url}
-          class="text-gray-400 hover:text-accent transition-colors"
-          aria-label={name}
-        >
-          <Icons name={icon} size={20} class="w-5 h-5" />
-        </a>
-      ))}
+      {socialLinks.map(({ name, url, icon }) => {
+        const Icon = Icons[icon];
+        return Icon && (
+          <a 
+            href={url}
+            class="text-gray-400 hover:text-accent transition-colors"
+            aria-label={name}
+          >
+            <Icon class="w-5 h-5" />
+          </a>
+        );
+      })}
     </div>
 
     <!-- Copyright -->

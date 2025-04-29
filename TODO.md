@@ -1,13 +1,11 @@
-when i click either the "inschrijven" button or the "contacteer mij" button, i want to pass a certain text to the contact form that prefills the message body. is that possible?
 
 content herstructureren van diensten
 
 layout van diensten overnemen van oude pagina's (mn product management), met pingelende shape en gouden randjes enzo
 
-breadcrumb huisje en diensten: text-accent hover:text-highlight transition-colors hover:underline
-
 
 content van diensten ergens meenemen:
+
 export const servicesContent = {
   title: "Our Product Management Approach",
   description: "We help you navigate from market understanding to product success using our proven discover, design, delight approach. Click or tap a card to learn more.",
@@ -97,11 +95,3 @@ export const servicesContent = {
 
 
 sitemap verifieren
-
-gtm script aanwezigheid verifieren
-
-
-welcome.astro mag weg?
-
-
-er ligt precies een overlay op de hero banner waardoor de CTA buttons niet aan te klikken zijn
