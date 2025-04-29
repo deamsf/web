@@ -1,0 +1,45 @@
+---
+import ShapeVector from './ShapeVector.astro';
+---
+
+<section id="about" class="section bg-gray-50 py-20">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-12 lg:gap-20 items-center">
+        <div class="relative">
+          <ShapeVector />
+          <div class="relative w-full aspect-square">
+            <div class="absolute inset-0" style="clip-path: url(#shape-clip);">
+              <img
+                src="../src/assets/img/frank-damen.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt="Frank - Digital Product Manager"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2 space-y-6">
+          <div class="space-y-2">
+            <h2 class="text-4xl md:text-5xl font-bold text-primary">Over mij</h2>
+            <h4 class="text-lg text-secondary font-medium">
+              Ik geloof in "de gevoelige snaar" en in "geef een man geen vis"
+            </h4>
+          </div>
+
+          <div class="prose prose-lg max-w-none text-gray-600 space-y-6">
+            <p>
+              Hallo, ik ben Frank, product manager en digitaal omnivoor. Mijn habitat is in de doorsnede van business, technologie en communicatie.
+            </p>
+            <p>
+              Mijn missie? Jou strategisch versterken en je digitale ambities waarmaken. Ik help bedrijven impact maken met een doordachte strategie en doelgerichte productontwikkeling, zodat geen middelen verloren gaan aan digitale initiatieven zonder effect.
+            </p>
+            <p>
+              Daarnaast help ik kleine ondernemingen een stevige plek vinden in het digitale landschap met een unieke, betaalbare website zonder gedoe en helder advies op maat – zonder verborgen kosten of lopende facturen. Geen vis, maar een hengel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import ServicesOverview from '../components/ServicesOverview.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ClientsSection from '../components/ClientsSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<Layout 
+  title="3volve - Shaping Digital Strategies"
+  description="We help businesses transform ideas into market-leading digital products through expert product management consulting services."
+  isHomePage={true}
+>
+  <HeroBanner />
+  <ServicesOverview />
+  <AboutSection />
+  <ClientsSection />
+  <ContactSection />
+</Layout>

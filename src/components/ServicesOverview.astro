@@ -1,0 +1,59 @@
+---
+import ServiceCard from './ServiceCard.astro';
+---
+
+<section id="services" class="section bg-primary py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Diensten</h2>
+       
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Strategische oplossingen op maat voor jouw digitale uitdagingen.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ServiceCard
+        title="Digitale Strategie"
+        description="Doelgerichte strategie voor effectieve digitale productontwikkeling en transformatie."
+        icon="strategy"
+        link="/services/digitale-strategie"
+      />
+      
+      <ServiceCard
+        title="AI Strategie"
+        description="Implementatie van AI in je bedrijfsprocessen voor efficiëntie en innovatie."
+        icon="ai"
+        link="/services/ai-strategie"
+      />
+      
+      <ServiceCard
+        title="Marketing & Communicatie"
+        description="Strategische communicatie die aanslaat bij je doelgroep en resultaten boekt."
+        icon="marketing"
+        link="/services/marketing-communicatie"
+      />
+      
+      <ServiceCard
+        title="AI Cursus"
+        description="Leer AI effectief inzetten voor je bedrijf met praktische trainingen."
+        icon="course"
+        link="/landing/ai-training"
+      />
+      
+      <ServiceCard
+        title="Websites"
+        description="Professionele, unieke websites voor kleine ondernemingen zonder gedoe."
+        icon="website"
+        link="/landing/jouw-website"
+      />
+      
+      <ServiceCard
+        title="Digitaal Advies"
+        description="Optimaliseer je digitale business met praktisch advies en implementatie."
+        icon="consulting"
+        link="/landing/digitaal-advies"
+      />
+    </div>
+  </div>
+</section>

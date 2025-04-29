@@ -1,0 +1,232 @@
+---
+import { ChevronDown } from 'lucide-react';
+import Logo from './Logo.astro';
+import UnderConstruction from './UnderConstruction.astro';
+
+const services = [
+  {
+    title: 'Digitale strategie',
+    description: 'Van marktinzicht naar productexcellentie',
+    icon: '🚀',
+    link: '/services/digitale-strategie',
+    details: ['Strategische planning', 'Roadmapping', 'Product Vision']
+  },
+  {
+    title: 'Websites',
+    description: 'Professioneel, uniek en betaalbaar',
+    icon: '🌐',
+    link: '/landing/jouw-website',
+    details: ['Modern Design', 'SEO-Optimized', 'Mobile-First']
+  },
+  {
+    title: 'Consulting & advies',
+    description: 'Expert advies voor digitale groei',
+    icon: '📊',
+    link: '/landing/digitaal-advies',
+    details: ['Business Analysis', 'Process Optimization', 'Growth Strategy']
+  },
+  {
+    title: 'AI Training',
+    description: 'Van idee naar prototype zonder code',
+    icon: '✨',
+    link: '/landing/ai-training',
+    details: ['AI Tools Mastery', 'Prompt Engineering', 'Rapid Prototyping']
+  }
+];
+---
+
+<header class="fixed w-full top-0 z-50 backdrop-blur bg-primary/30">
+  <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <Logo />
+      <UnderConstruction />
+    </div>
+    
+    <div class="hidden md:flex items-center space-x-8">
+      <div class="relative group">
+        <button 
+          id="services-button"
+          class="flex items-center text-gray-300 hover:text-accent transition-colors"
+        >
+          Wat ik doe
+          <ChevronDown client:load className="w-4 h-4 ml-1 transition-transform" />
+        </button>
+      </div>
+      
+      <a href="/" class="text-gray-300 hover:text-accent transition-colors" data-section="about">Over mij</a>
+      <a href="/" class="text-gray-300 hover:text-accent transition-colors" data-section="contact">Contact</a>
+    </div>
+    
+    <button 
+      class="md:hidden text-gray-300 hover:text-accent transition-colors" 
+      id="mobile-menu-button"
+      aria-label="Menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Services Panel -->
+  <div 
+    id="services-panel" 
+    class="fixed left-1/2 -translate-x-1/2 w-full max-w-5xl bg-primary/95 backdrop-blur-lg rounded-lg shadow-xl p-8 opacity-0 invisible transition-all duration-300 transform -translate-y-4"
+    style="top: 5rem;"
+  >
+    <div class="grid grid-cols-2 gap-8">
+      {services.map(service => (
+        <a 
+          href={service.link}
+          class="p-6 rounded-lg hover:bg-white/5 transition-colors group"
+        >
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">{service.icon}</span>
+            <div>
+              <h3 class="text-white font-medium mb-2 group-hover:text-accent transition-colors">
+                {service.title}
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">{service.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {service.details.map(detail => (
+                  <span class="text-xs px-2 py-1 rounded bg-white/10 text-gray-300">
+                    {detail}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+
+  <!-- Mobile Menu -->
+  <div 
+    id="mobile-menu"
+    class="fixed inset-0 bg-primary/95 transform translate-x-full transition-transform duration-300 md:hidden"
+  >
+    <div class="container mx-auto px-4 py-8 ">
+      <div class="flex justify-end mb-8">
+        <button 
+          id="close-mobile-menu"
+          class="text-gray-300 hover:text-accent transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <nav class="flex flex-col space-y-6">
+        <button 
+          id="mobile-services-button"
+          class="text-gray-300 hover:text-accent transition-colors text-left flex items-center justify-between"
+        >
+          Wat ik doe
+          <ChevronDown client:load className="w-4 h-4 transition-transform" />
+        </button>
+        
+        <div 
+          id="mobile-services-panel"
+          class="hidden space-y-4 pl-4"
+        >
+          {services.map(service => (
+            <a 
+              href={service.link}
+              class="block text-gray-300 hover:text-accent transition-colors"
+            >
+              {service.title}
+            </a>
+          ))}
+        </div>
+        
+        <a href="/" class="text-gray-300 hover:text-accent transition-colors" data-section="about">Over mij</a>
+        <a href="/" class="text-gray-300 hover:text-accent transition-colors" data-section="contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Services Panel Toggle
+  const servicesButton = document.getElementById('services-button');
+  const servicesPanel = document.getElementById('services-panel');
+  const modalOverlay = document.getElementById('modal-overlay');
+  const chevronIcon = servicesButton?.querySelector('svg');
+  let isPanelOpen = false;
+
+  function togglePanel() {
+    isPanelOpen = !isPanelOpen;
+    if (isPanelOpen) {
+      servicesPanel?.classList.remove('opacity-0', 'invisible', '-translate-y-4');
+      modalOverlay?.classList.remove('opacity-0', 'invisible');
+      chevronIcon?.classList.add('rotate-180');
+    } else {
+      servicesPanel?.classList.add('opacity-0', 'invisible', '-translate-y-4');
+      modalOverlay?.classList.add('opacity-0', 'invisible');
+      chevronIcon?.classList.remove('rotate-180');
+    }
+  }
+
+  servicesButton?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    togglePanel();
+  });
+
+  modalOverlay?.addEventListener('click', () => {
+    if (isPanelOpen) {
+      togglePanel();
+    }
+  });
+
+  // Mobile Menu Toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileServicesButton = document.getElementById('mobile-services-button');
+  const mobileServicesPanel = document.getElementById('mobile-services-panel');
+  const mobileChevronIcon = mobileServicesButton?.querySelector('svg');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('translate-x-full');
+  });
+
+  closeMobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.add('translate-x-full');
+  });
+
+  mobileServicesButton?.addEventListener('click', () => {
+    mobileServicesPanel?.classList.toggle('hidden');
+    mobileChevronIcon?.classList.toggle('rotate-180');
+  });
+
+  // Handle section navigation
+  document.querySelectorAll('a[data-section]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const section = this.getAttribute('data-section');
+      const currentPath = window.location.pathname;
+      
+      if (currentPath !== '/') {
+        window.location.href = `/#${section}`;
+      } else {
+        const targetElement = document.getElementById(section);
+        if (targetElement) {
+          // Close mobile menu if open
+          mobileMenu?.classList.add('translate-x-full');
+          
+          const headerOffset = 100;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+</script>

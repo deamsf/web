@@ -1,0 +1,39 @@
+---
+import Icons from './Icons.astro';
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/3volve-be/', icon: 'linkedin' },
+  { name: 'Instagram', url: '#', icon: 'instagram' },
+  { name: 'Facebook', url: '#', icon: 'facebook' },
+  { name: 'Twitter', url: '#', icon: 'twitter' }
+];
+---
+
+<footer class="bg-primary border-t border-secondary/30 py-8">
+  <div class="container mx-auto px-4">
+    <!-- Social Links -->
+    <div class="flex justify-center gap-4 mb-6">
+      {socialLinks.map(({ name, url, icon }) => (
+        <a 
+          href={url}
+          class="text-gray-400 hover:text-accent transition-colors"
+          aria-label={name}
+        >
+          <Icons name={icon} size={20} class="w-5 h-5" />
+        </a>
+      ))}
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-gray-400 text-sm">
+      <p class="mb-2">© {currentYear} 3volve Consulting (BE1018741807). Alle rechten voorbehouden.</p>
+      <div class="flex justify-center gap-4">
+        <a href="/privacy" class="hover:text-accent transition-colors">Privacy Policy</a>
+        <span>•</span>
+        <a href="/cookies" class="hover:text-accent transition-colors">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>

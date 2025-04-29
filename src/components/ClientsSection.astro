@@ -1,0 +1,34 @@
+---
+// Client logos would be added here
+const clients = [
+  {
+    name: "Jeroen Jeuris",
+    logo: "../src/assets/logo/client/logo-jj.svg?text=Jeroen+Jeuris",
+    industry: "Architecture"
+  },
+  {
+    name: "Swirlazzo",
+    logo: "../src/assets/logo/client/swirlazzo-logo-zwart.svg?text=Swirlazzo",
+    industry: "Fashion"
+  }
+];
+---
+
+<section id="clients" class="section bg-gray-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Klanten</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Vraag het aan hen.
+      </p>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-8 items-center">
+      {clients.map(client => (
+        <div class="flex items-center justify-center px-6 py-4 bg-white rounded-lg shadow-sm">
+          <img src={client.logo} alt={client.name} class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

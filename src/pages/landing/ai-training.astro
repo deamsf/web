@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = "AI Training voor Business Professionals | 3volve Consulting";
+const description = "Leer hoe je AI kunt inzetten om je ideeën tot leven te brengen zonder te programmeren. Een unieke cursus voor businessgerichte IT'ers die willen innoveren met AI.";
+
+const breadcrumbItems = [
+  { label: 'Diensten', href: '/#services' },
+  { label: 'AI Training', href: '/landing/ai-training' }
+];
+---
+
+<Layout {title} {description}>
+  <div class="min-h-screen bg-primary">
+    <div class="max-w-4xl pt-28 pb-12 mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-white mt-6 mb-6">Verleg je grenzen en laat AI je idee bouwen</h1>
+      <Breadcrumbs items={breadcrumbItems} />
+      
+      <div class="prose prose-invert mt-8">
+        <h2 class="text-gray-300 text-lg mb-8">
+          Een unieke cursus voor businessgerichte IT'ers die AI willen inzetten om hun ideeën tot leven te brengen – zonder programmeren!
+        </h2>
+
+        <div class="space-y-8">
+          <div class="text-gray-300">
+            <p class="mb-6">
+              Heb je een idee, maar kan je niet programmeren? Of heb je een hekel aan die eindeloze overlegmeetings tussen business en IT om iedereen op dezelfde lijn te krijgen? Dan is deze cursus iets voor jou.
+            </p>
+            <p class="mb-6">
+              De manier waarop software wordt ontwikkeld, verandert. Als je een strategische, analytische of innovatieve rol hebt in IT, dan ben je maar beter mee met die evolutie. 
+            </p>
+            <p class="mb-6">
+              In deze cursus ontdek je hoe je zonder enige programmeerkennis een idee of behoefte tot leven brengt – sneller, efficiënter en concreter dan ooit tevoren.
+            </p>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Wat leer je?</h2>
+            <div class="space-y-2">
+              {[
+                'hoe je AI inzet om van een idee tot een werkend prototype of proof of concept te komen, zonder technische voorkennis',
+                'AI tools gebruiken in het kader van "design for agreement"',
+                'hoe je prompt als een pro',
+                'welke tools er vandaag zijn en hoe ze werken',
+                'wat de mogelijkheden en limitaties op dit moment zijn',
+                'expert tips en tricks om echt tot het uiterste te gaan'
+              ].map((item) => (
+                <div class="flex items-start gap-3 text-gray-300">
+                  <span class="text-highlight text-2xl">✓</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Voor wie is deze cursus bedoeld?</h2>
+            <p class="text-gray-300 mb-4">Deze cursus is ideaal voor:</p>
+            <ul class="space-y-2 text-gray-300">
+              {[
+                'product managers & owners',
+                'business analisten',
+                'functioneel analisten',
+                'UX/UI-designers',
+                'ondernemers met een idee',
+              ].map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-highlight">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Wat levert deze cursus jou op?</h2>
+            
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl font-semibold text-accent mb-4">Inzicht & Vaardigheden</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>👁️</span>
+                    <span>Je leert het landschap van AI-tools kennen en weet waarvoor je ze inzet</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>✨</span>
+                    <span>Je ontdekt methodes en frameworks om AI precies te laten bouwen wat je in gedachten hebt</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>🛠️</span>
+                    <span>Je ontwikkelt de kennis en skills om zelf prototypes, proof of concepts of zelfs MVP's te maken</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold text-accent mb-4">Samenwerking & Resultaat</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>🎯</span>
+                    <span>Je voorkomt misverstanden en afwijkende interpretaties</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>🤝</span>
+                    <span>Je aligneert én inspireert stakeholders met concrete, werkende prototypes</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>🛠️</span>
+                    <span>Je bouwt snel tastbare oplossingen die meteen impact maken</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold text-accent mb-4">Sneller & Slimmer Werken</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>📈</span>
+                    <span>Je versnelt je hele proces van idee tot gevalideerde oplossing</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>⚡</span>
+                    <span>Je overleg met developers verloopt vlotter en efficiënter</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>💬</span>
+                    <span>Je leert helder communiceren met AI – alsof het een extra developer is</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span>💯</span>
+                    <span>Je blijft aan de leiding in een snel veranderend digitaal landschap</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Programma</h2>
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="text-highlight">•</span>
+                <span>De wereld van AI-coding: tools & trends (Bolt, Claude, v0, …)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-highlight">•</span>
+                <span>Prompting als skill: hoe krijg je wat je écht wil</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-highlight">•</span>
+                <span>Hands-on oefening: bouw je eigen idee</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-highlight">•</span>
+                <span>Geavanceerde tips & tricks (Figma, GitHub, deployment, …)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Prijs & Planning</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              {/* Group Training */}
+              <div class="bg-primary/50 p-6 rounded-lg border border-accent flex flex-col">
+                <h3 class="text-xl font-semibold text-white mb-2">Op Locatie</h3>
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span class="text-3xl font-bold text-highlight">€ 360</span>
+                  <span class="text-gray-400">per persoon, excl. btw</span>
+                </div>
+                <ul class="space-y-3 text-gray-300 flex-grow">
+                  <li class="flex items-center gap-2">
+                    <span class="text-highlight">•</span>
+                    <span>Groepstraining (kleine groep)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-highlight">•</span>
+                    <span>4 uur</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-highlight">•</span>
+                    <span>Volgende sessie: Coming Soon</span>
+                  </li>
+                </ul>
+                <a 
+                  href="#contact"
+                  class="mt-6 inline-flex justify-center items-center px-6 py-3 border border-accent text-accent hover:bg-accent/10 rounded-lg font-semibold transition-colors w-full"
+                >
+                  Inschrijven
+                </a>
+              </div>
+
+              {/* Personal Training */}
+              <div class="bg-primary/50 p-6 rounded-lg border border-accent flex flex-col">
+                <h3 class="text-xl font-semibold text-white mb-2">Persoonlijke Training</h3>
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span class="text-3xl font-bold text-highlight">Op maat</span>
+                </div>
+                <ul class="space-y-3 text-gray-300 flex-grow">
+                  <li class="flex items-center gap-2">
+                    <span class="text-highlight">•</span>
+                    <span>1-op-1 of kleine groep</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-highlight">•</span>
+                    <span>Remote of op locatie</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-highlight">•</span>
+                    <span>Flexibele planning</span>
+                  </li>
+                </ul>
+                <a 
+                  href="#contact"
+                  class="mt-6 inline-flex justify-center items-center px-6 py-3 bg-highlight hover:bg-highlight/90 text-white rounded-lg font-semibold transition-colors w-full"
+                >
+                  Contacteer mij
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ContactSection />
+</Layout>

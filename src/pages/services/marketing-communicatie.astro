@@ -1,0 +1,119 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = "Marketing & Communicatie Strategie | 3volve Consulting";
+const description = "Strategische communicatie die aanslaat bij je doelgroep en resultaten boekt. Wij helpen je met het ontwikkelen en implementeren van effectieve marketing- en communicatiestrategieën.";
+
+const breadcrumbItems = [
+  { label: 'Diensten', href: '/#services' },
+  { label: 'Marketing & Communicatie', href: '/services/marketing-communicatie' }
+];
+---
+
+<Layout {title} {description}>
+  <div class="min-h-screen bg-primary">
+    <div class="max-w-4xl pt-28 pb-12 mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-white mt-6 mb-6">Marketing & Communicatie</h1>
+      <Breadcrumbs items={breadcrumbItems} />
+      
+      <div class="prose prose-invert mt-8">
+        <h2 class="text-gray-300 text-lg mb-8">
+          Effectieve communicatie die je doelgroep raakt en je business laat groeien
+        </h2>
+
+        <div class="space-y-8">
+          <div class="text-gray-300">
+            <p class="mb-6">
+              In de digitale wereld is effectieve communicatie cruciaal voor succes. Wij helpen je om je boodschap helder over te brengen en je doelgroep te bereiken op een manier die resoneert en resultaten oplevert.
+            </p>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Wat we bieden</h2>
+            <ul class="space-y-6">
+              {[
+                { title: 'Communicatiestrategie', desc: 'Ontwikkeling van een doelgerichte communicatiestrategie die aansluit bij je bedrijfsdoelen' },
+                { title: 'Content Planning', desc: 'Strategische content planning en creatie die je doelgroep aanspreekt' },
+                { title: 'Social Media', desc: 'Effectieve social media strategieën en campagnes' },
+                { title: 'Marketing Automation', desc: 'Slimme automatisering van je marketing en communicatie' }
+              ].map((item) => (
+                <li class="space-y-2">
+                  <div class="flex items-start gap-3">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      class="h-5 w-5 text-highlight shrink-0 mt-1" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-white">{item.title}</h3>
+                      <p class="text-gray-300">{item.desc}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Onze aanpak</h2>
+            <ul class="space-y-4">
+              {[
+                'Doelgroepanalyse – We identificeren en begrijpen je doelgroep',
+                'Contentstrategie – We ontwikkelen content die aanspreekt en converteert',
+                'Kanaalstrategie – We kiezen de juiste kanalen voor maximaal bereik',
+                'Meetbare resultaten – We monitoren en optimaliseren continu'
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <span class="text-highlight shrink-0">🔹</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Resultaten</h2>
+            <ul class="space-y-4">
+              {[
+                'Verhoogde zichtbaarheid en merkbekendheid',
+                'Betere engagement met je doelgroep',
+                'Hogere conversieratio\'s',
+                'Meetbare ROI op je marketing inspanningen'
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    class="h-5 w-5 text-highlight shrink-0 mt-0.5" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p class="text-gray-300 text-lg mb-8">
+            Klaar om je marketing en communicatie naar een hoger niveau te tillen? Neem contact op voor een vrijblijvend gesprek.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ContactSection />
+</Layout>

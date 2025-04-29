@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = "Digitale Product en Marketing Strategie | 3volve Consulting";
+const description = "Bepaal je digitale toekomst met onze uitgebreide strategische diensten. We helpen bedrijven duidelijke, haalbare roadmaps te ontwikkelen voor hun digitale producten en diensten.";
+
+const breadcrumbItems = [
+  { label: 'Diensten', href: '/#services' },
+  { label: 'Digitale Strategie', href: '/services/digitale-strategie' }
+];
+---
+
+<Layout {title} {description}>
+  <div class="min-h-screen bg-primary">
+    <div class="max-w-4xl pt-28 pb-12 mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-white mt-6 mb-6">Digitale Strategie</h1>
+      <Breadcrumbs items={breadcrumbItems} />
+      
+      <div class="prose prose-invert mt-8">
+        <h2 class="text-gray-300 text-lg mb-8">
+          Vorm je digitale toekomst met onze uitgebreide strategieën op jouw maat
+        </h2>
+
+        <div class="text-gray-300 mb-12">
+          <p>
+            Wij helpen je om marktinzichten om te zetten in productexcellentie. We helpen bedrijven duidelijke, haalbare en vooral doelgerichte roadmaps te ontwikkelen voor hun digitale producten en diensten. 
+            Onze aanpak combineert diepgaand inzicht verwerven met strategische planning om ervoor te zorgen dat je digitale initiatieven échte waarde leveren.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+          <h2 class="text-2xl font-bold text-white mb-6">Wat je krijgt</h2>
+          <ul class="space-y-4">
+            {[
+              'Uitgebreide digitale strategie en roadmap',
+              'Duidelijke visie en missieverklaring voor je digitale initiatieven',
+              'Gedetailleerde gebruikerspersona\'s en customer journeymapping',
+              'Concurrentieanalyse en marktpositionering',
+              'Haalbaar implementatieplan met duidelijke mijlpalen',
+              'KPI-raamwerk om succes te meten',
+              'Regelmatige strategiereview en aanpassingssessies'
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  class="h-5 w-5 text-highlight shrink-0 mt-0.5" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  stroke-width="2" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+          <h2 class="text-2xl font-bold text-white mb-6">Waarom voor ons kiezen?</h2>
+          <ul class="space-y-4">
+            {[
+              'Diepgaande expertise in digitale productstrategie en marktanalyse',
+              'Bewezen methode die gebruikersbehoeften combineert met bedrijfsdoelen',
+              'Focus op haalbare, meetbare resultaten',
+              'Flexibele aanpak die zich aanpast aan jouw bedrijfscontext',
+              'Continue ondersteuning tijdens de implementatie van de strategie'
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-300">
+                <span class="text-highlight shrink-0">🔹</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="text-center">
+          <p class="text-gray-300 text-lg mb-8">
+            Klaar om je digitale strategie te ontwikkelen en je producten en diensten een boost te geven? Laten we samen zitten!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ContactSection />
+</Layout>

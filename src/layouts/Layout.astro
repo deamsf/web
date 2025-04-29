@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Prefooter from '../components/Prefooter.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  isHomePage?: boolean;
+}
+
+const { 
+  title = '3volve - Shaping Digital Strategies',
+  description = '3volve helps businesses transform ideas into market-leading digital products through expert product management consulting services.',
+  isHomePage = false
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="product management, consulting, digital products, user research, market insights, product strategy" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://3volve.be" />
+    
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K2S5NB99');
+    </script>
+  </head>
+  <body class="min-h-screen bg-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2S5NB99" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <Navbar />
+    <main>
+    
+      <slot />
+    </main>
+    <Prefooter />
+    <Footer />
+  </body>
+</html>

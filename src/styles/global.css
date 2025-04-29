@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white font-noto text-gray-800 leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-exo text-primary leading-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-medium;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+  
+  p {
+    @apply mb-4;
+  }
+  
+  a {
+    @apply text-secondary hover:text-tertiary transition duration-300;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto;
+    max-width: 1280px;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center py-3 px-6 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary to-tertiary text-white hover:from-secondary/90 hover:to-tertiary/90;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  .section {
+    @apply py-16 md:py-32;
+  }
+  
+  .section-title {
+    @apply text-center mb-16;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .premium-gradient {
+    @apply bg-gradient-to-br from-primary via-secondary to-tertiary;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/80;
+  }
+  
+  .premium-border {
+    @apply border border-gray-200/50;
+  }
+  
+  .premium-shadow {
+    @apply shadow-[0_8px_30px_rgb(0,0,0,0.12)];
+  }
+}
+
+.vector-shape {
+  color: theme('colors.tertiary');
+}
+
+.vector-shape-accent {
+  color: theme('colors.accent');
+}
+
+.vector-shape-highlight {
+  color: theme('colors.highlight');
+}
+
+/* Premium animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glass morphism effects */
+.glass-card {
+  @apply backdrop-blur-xl bg-white/80 border border-white/20;
+}
+
+/* Premium gradients */
+.premium-text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-tertiary;
+}

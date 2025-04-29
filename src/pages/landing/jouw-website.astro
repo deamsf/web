@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = "Kleine professionele websites zonder zorgen | 3volve Consulting";
+const description = "Professionele websites die resultaat opleveren. Perfect voor kleine bedrijven en starters die op zoek zijn naar een sterke online aanwezigheid zonder gedoe of lock-in.";
+
+const breadcrumbItems = [
+  { label: 'Diensten', href: '/#services' },
+  { label: 'Websites', href: '/landing/jouw-website' }
+];
+---
+
+<Layout {title} {description}>
+  <div class="min-h-screen bg-primary">
+    <div class="max-w-4xl pt-28 pb-12 mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-white mt-6 mb-6">Websites voor kleine ondernemingen</h1>
+      <Breadcrumbs items={breadcrumbItems} />
+      
+      <div class="prose prose-invert mt-8">
+        <div class="space-y-8">
+          <div class="text-gray-300">
+            <h2 class="text-gray-300 text-lg mb-8">
+              Veel kleine bedrijven worstelen met sterk verouderde websites en/of dure ontwikkelingskosten.
+            </h2>
+          </div>
+
+          <div class="text-gray-300">
+            <p class="mb-6">
+              Wij bieden een strakke one-pager website-oplossing, perfect voor kleine ondernemingen die een heldere, effectieve online aanwezigheid nodig hebben voor een betaalbare en transparante prijs. Geen gedoe, geen geheimen!
+            </p>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Wat je krijgt</h2>
+            <ul class="space-y-4">
+              {[
+                'Een moderne, professionele en gestroomlijnde onepager-website, gebouwd voor waarde en efficiëntie',
+                'Op maat gemaakte one-page website afgestemd op jouw merk',
+                'Op maat gemaakt ontwerp & inhoud voor een professionele uitstraling',
+                'Eén intakegesprek en één revisieronde',
+                'Geen ingewikkelde systemen, gewoon een strakke, moderne website die doet wat hij moet doen',
+                'Snelle laadtijd & mobielvriendelijk voor de beste gebruikerservaring',
+                'Geen rommel, geen gedoe, geen verborgen kosten'
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    class="h-5 w-5 text-highlight shrink-0 mt-0.5" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-secondary/20 p-8 rounded-lg border border-accent/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Waarom voor ons kiezen?</h2>
+            <ul class="space-y-4">
+              {[
+                'We verkopen geen onnodige extra\'s. Je krijgt een eenvoudige, aantrekkelijke website voor jouw budget die doet wat hij moet doen.',
+                'We zijn hier om te helpen. Wil je nieuwe of extra inhoud? Je krijgt een eerlijke offerte voor uurtariefwerk.',
+                'We zetten je niet vast. Jij bezit je website en domeinnaam.'
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <span class="text-highlight shrink-0">🔹</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p class="text-gray-300 text-lg mb-8">
+            Een nieuwe website die gewoon doet wat moet, zonder zorgen? Laten we kennismaken! 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ContactSection />
+</Layout>

@@ -1,0 +1,20 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 0 0" 
+  class={className}
+  style="position: absolute; width: 0; height: 0; overflow: hidden;"
+>
+  <defs>
+    <clipPath id="shape-clip" clipPathUnits="objectBoundingBox">
+      <path d="M 0.017 0.34 Q 0.468 0.03 0.936 0.085 Q 0.928 0.553 0.574 0.962 Q 0.175 0.737 0.017 0.34" />
+    </clipPath>
+  </defs>
+</svg>

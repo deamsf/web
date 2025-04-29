@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Pagina Niet Gevonden | 3volve Consulting";
+const description = "Sorry, we kunnen de pagina die je zoekt niet vinden. Ontdek onze andere diensten of ga terug naar de homepagina.";
+
+const suggestions = [
+  {
+    title: 'Digitale Strategie',
+    description: 'Ontwikkel een future-proof digitale strategie',
+    path: '/services/digitale-strategie',
+    icon: 'Compass'
+  },
+  {
+    title: 'Websites',
+    description: 'Jouw onepager website, zonder gedoe',
+    path: '/landing/jouw-website',
+    icon: 'Search'
+  }
+];
+---
+
+<Layout {title} {description}>
+  <main class="flex-grow pt-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center mb-12">
+        <div class="relative w-32 h-32 mx-auto mb-8">
+          <div class="absolute inset-0 flex items-center justify-center text-highlight text-6xl font-bold">
+            404
+          </div>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-primary mb-4">
+          Oeps! Deze pagina bestaat niet.
+        </h1>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+          Het lijkt erop dat je een pagina probeert te bereiken die niet (meer) bestaat. 
+          Geen zorgen, we helpen je graag verder!
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center gap-2 bg-highlight hover:bg-highlight/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              class="h-5 w-5" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            <span>Naar de homepagina</span>
+          </a>
+          <button
+            onclick="history.back()"
+            class="inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary/10 px-6 py-3 rounded-lg font-semibold transition-colors"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              class="h-5 w-5" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path d="m12 19-7-7 7-7"/>
+              <path d="M19 12H5"/>
+            </svg>
+            <span>Ga terug</span>
+          </button>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold text-primary mb-6">
+            Misschien ben je hierin geïnteresseerd?
+          </h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            {suggestions.map((suggestion) => (
+              <a
+                href={suggestion.path}
+                class="p-6 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  class="w-8 h-8 text-highlight mb-4" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  stroke-width="2" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"
+                >
+                  {suggestion.icon === 'Compass' ? (
+                    <>
+                      <circle cx="12" cy="12" r="10"/>
+                      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                    </>
+                  ) : (
+                    <>
+                      <circle cx="11" cy="11" r="8"/>
+                      <path d="m21 21-4.3-4.3"/>
+                    </>
+                  )}
+                </svg>
+                <h3 class="text-lg font-semibold text-primary mb-2">
+                  {suggestion.title}
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  {suggestion.description}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+
+# Prevent access to sensitive directories
+Disallow: /private/
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+
+# Block common bot traps
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*page=
+Disallow: /*?*print=
+Disallow: /*?*replytocom=
+
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+Allow: /sitemap.xml
+
+User-agent: Bingbot
+Allow: /
+Allow: /sitemap.xml
+
+# Specify sitemap location
+Sitemap: https://www.3volve.be/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 10
